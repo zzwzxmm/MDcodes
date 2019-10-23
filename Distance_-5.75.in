@@ -1,0 +1,25 @@
+colvarsTrajFrequency      50
+colvarsRestartFrequency   50000
+colvar {
+    name               ion
+#    width              1
+#    lowerBoundary      -6
+#    upperBoundary      6
+    distanceZ {
+	main {
+	    psfSegID    I
+	    atomNameResidueRange SOD 1-1
+	}
+	ref {
+           dummyAtom (2.10, 0.76, 8.16)
+	}
+    }
+}
+
+harmonic {
+   colvars ion
+   centers -5.75
+   forceConstant 20
+# actual value: 20 kcal/mol / 1^2A = 20 kcal/mol/A^2
+}
+
